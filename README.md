@@ -6,7 +6,7 @@
 </div>
 
 ## 목차
-  - [Infinite Scroll?](#Infinite Scroll?)
+  - [Infinite Scroll?](#Infinite-Scroll?)
   - [구현 방법 구분](#구현-방법-구분)
   - [Intersection Observer API](#Intersection-Observer-API)
 
