@@ -10,7 +10,7 @@
   - [구현 방법 구분](#구현-방법-구분)
   - [Intersection Observer API](#Intersection-Observer-API)
   - [아키텍처](#아키텍처)
-  - [구현화면](#구현화면)
+  - [구현 화면](#구현-화면)
   - [구현 코드 설명](#구현-코드-설명)
   - [Reference](#Reference)
 
@@ -29,9 +29,9 @@
 
 ## 아키텍처
 
-## 구현화면
+## 구현 화면
 
-## 구현 코드 설명 dhdld
+## 구현 코드 설명
 
 ## Reference
 - https://www.youtube.com/watch?v=NZKUirTtxcg&t=691s
