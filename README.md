@@ -30,7 +30,8 @@
 ## 아키텍처
 
 ## 구현 화면
-|![image](https://github.com/HyeyonJ/infiniteScrollByUseRef/assets/113879120/d85dc1a9-e0d3-4773-8ae5-613cfde6d5f8)|![image](https://github.com/HyeyonJ/infiniteScrollByUseRef/assets/113879120/f0cc2fbd-8c19-4f44-b2f9-8368d2e0e2fb)|
+|![image](https://github.com/HyeyonJ/infiniteScrollByUseRef/assets/113879120/2a9e92cb-0916-4f17-bcea-9a2ceecde483)
+|![image](https://github.com/HyeyonJ/infiniteScrollByUseRef/assets/113879120/f0cc2fbd-8c19-4f44-b2f9-8368d2e0e2fb)|
 |---|---|
 |시작 화면|검색 데이터|
 
