@@ -36,10 +36,9 @@
 
 
 ## 구현 코드 설명
-|---|
 ```
 return (
-    <>
+    <div style={{ textAlign: "center" }}>
       <input type="text" value={query} onChange={handleSearch}></input>
       {books.map((book, index) => {
         if (books.length === index + 1) {
@@ -54,11 +53,13 @@ return (
       })}
       <div>{loading && "Loading..."}</div>
       <div>{error && "Error"}</div>
-    </>
+    </div>
   );
 }
 ```
-|---|
+- input value 값에 변화가 있을 시 onChange 이벤트 핸들러는 handleSearch를 연결합니다.
+- books 배열을 매핑하여 동적으로 도서 목록을 생성합니다. 마지막 도서 요소 books.length === index + 1인 경우 lastBookElementRef를 참조하도록 설정합니다.
+
 
 ## Reference
 - https://www.youtube.com/watch?v=NZKUirTtxcg&t=691s
