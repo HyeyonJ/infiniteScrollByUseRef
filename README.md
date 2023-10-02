@@ -30,7 +30,11 @@
 ## 아키텍처
 
 ## 구현 화면
-|
+|![image](https://github.com/HyeyonJ/infiniteScrollByUseRef/assets/113879120/d85dc1a9-e0d3-4773-8ae5-613cfde6d5f8)|
+|:---:|
+|시작 화면|
+
+
 ## 구현 코드 설명
 
 ## Reference
