@@ -15,13 +15,13 @@
   - [Reference](#Reference)
 
 ## Infinite Scroll?
-  - Infinite scroll은 한 번에 모든 컨텐츠를 렌더링 하지 않고, 스크롤을 하면 새로운 컨텐츠를 덧붙여서 렌더링 하는 방식이다. 이는 한 번에 모든 컨텐츠를 로딩할 시 과부화 등의 비효율을 줄이기 위한 퍼포먼스로 사용할 수 있다.
+  - Infinite scroll은 한 번에 모든 컨텐츠를 렌더링 하지 않고, 스크롤을 하면 새로운 컨텐츠를 덧붙여서 렌더링 하는 방식이다. 이는 한 번에 모든 컨텐츠를 로딩할 시 과부화 등의 비효율을 줄이기 위한 퍼포먼스로 사용할 수 있습니다.
 
 ## 구현 방법 구분
-  - Infinite Scroll 구현 방법은 크게 두 가지로 나뉜다.
+  - Infinite Scroll 구현 방법은 크게 두 가지로 나뉩니다.
   - onScroll event
   - Interection Observer API
-  - 이 곳에선 Interection Observer API로 구현했다.
+  - 이 곳에선 Interection Observer API로 구현했습니다.
 
 ## Intersection Observer API
   - MDN의 정의 : Intersection Observer 인터페이스는 대상 요소와 상위 요소, 또는 대상 요소와 최상위 문서의 뷰포트가 서로 교차하는 영역이 달라지는 경우 이를 비동기적으로 감지할 수 있는 수단을 제공합니다.
@@ -30,7 +30,7 @@
 ## 아키텍처
 
 ## 구현 화면
-
+|
 ## 구현 코드 설명
 
 ## Reference
