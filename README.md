@@ -60,6 +60,62 @@ return (
 - input value 값에 변화가 있을 시 onChange 이벤트 핸들러는 handleSearch를 연결합니다.
 - books 배열을 매핑하여 동적으로 도서 목록을 생성합니다. 마지막 도서 요소 books.length === index + 1인 경우 lastBookElementRef를 참조하도록 설정합니다.
 
+```
+  function handleSearch(e) {
+    setQuery(e.target.value);
+    setPageNumber(1);
+  }
+```
+- 텍스트를 입력할 때 마다 해당 텍스트로 query 상태 변수를 업데이트 합니다. 사용자가 검색어를 임력할 때 마다 화면이 다시 렌더링되며, 입력된 검색어에 따라 검색 결과가 동적으로 업데이트 됩니다.
+
+```
+useEffect(() => {
+    setLoading(true);
+    setError(false);
+    const timeout = setTimeout(async () => {
+      try {
+        const res = await fetch(
+          `https://openlibrary.org/search.json?q=${query}&page=${pageNumber}`
+        );
+        if (res.ok) {
+          const data = await res.json();
+          console.log("여기", data);
+          setBooks((prevBooks) => [
+            ...new Set([...prevBooks, ...data.docs.map((b) => b.title)])
+          ]);
+          setHasMore(data.docs.length > 0);
+        }
+      } catch (error) {
+        console.error("데이터를 가져오는 중 오류 발생:", error);
+        setError(true);
+      } finally {
+        setLoading(false);
+      }
+    }, 3000);
+    return () => clearInterval(timeout);
+  }, [query, pageNumber]);
+```
+- setTimteout은 데이터를 불러오기 전에 3초 동안 로딩 상태를 유지한 다음 데이터를 불러오는 비동기 작업을 시작합니다.이렇게 함으로써, 컴포넌트가 언마운트되거나 query나 pageNumber가 변경되는 등의 경우에 setTimeout이 더 이상 실행되지 않도록 보장합니다.
+- hasMore는 현재 데이터를 불러온 페이지에서 가져온 도서 목록(data.docs)의 길이보다 0보다 큰지를 검사하는 조건식입니다. 만약 현재 페이지에서 가져온 도서 목록의 길이가 0보다 크다면, 즉, 데이터가 존재한다면 조건식은 true로 바뀌어 실행됩니다.
+
+```
+ const observer = useRef();
+  const lastBookElementRef = useCallback(
+    (node) => {
+      if (loading) return;
+      if (observer.current) observer.current.disconnect();
+      observer.current = new IntersectionObserver((entries) => {
+        if (entries[0].isIntersecting && hasMore) {
+          setPageNumber((prevPageNumber) => prevPageNumber + 1);
+        }
+      });
+      if (node) observer.current.observe(node);
+    },
+    [loading, hasMore]
+  );
+```
+- lastBookElementRef 변수는 IntersectionObserver를 사용하여 화면의 가장 하단에 도달하면 다음 페이지의 데이터를 불러오기 위한 콜백 함수입니다.
+- entries[0].isIntersecting는 첫 번째 요소가 화면에 진입했는지 여부를 나타내는 불리언 값입니다.hasMore 상태가 true이면서 첫 번째 요소가 화면에 진입하면 다음 페이지를 요청하기 위해 setPageNumber 함수를 호출하여 페이지 번호를 업데이트하고, 콜백 함수가 관찰할 DOM 요소(node)가 존재하면해당 요소를 감시하기 위해 observer.current.observe(node)를 호출합니다.
 
 ## Reference
 - https://www.youtube.com/watch?v=NZKUirTtxcg&t=691s
