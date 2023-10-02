@@ -36,6 +36,28 @@
 
 
 ## 구현 코드 설명
+```
+return (
+    <>
+      <input type="text" value={query} onChange={handleSearch}></input>
+      {books.map((book, index) => {
+        if (books.length === index + 1) {
+          return (
+            <div ref={lastBookElementRef} key={book}>
+              {book}
+            </div>
+          );
+        } else {
+          return <div key={book}>{book}</div>;
+        }
+      })}
+      <div>{loading && "Loading..."}</div>
+      <div>{error && "Error"}</div>
+    </>
+  );
+}
+
+```
 
 ## Reference
 - https://www.youtube.com/watch?v=NZKUirTtxcg&t=691s
