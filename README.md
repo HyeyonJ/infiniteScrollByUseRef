@@ -19,8 +19,8 @@
 
 ## 구현 방법 구분
   - Infinite Scroll 구현 방법은 크게 두 가지로 나뉩니다.
-  - onScroll event
-  - Interection Observer API
+    - onScroll event
+    - Interection Observer API
   - 이 곳에선 Interection Observer API로 구현했습니다.
 
 ## Intersection Observer API
