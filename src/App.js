@@ -25,13 +25,13 @@ export default function App() {
     const timeout = setTimeout(async () => {
       try {
         const res = await fetch(
-          `https://openlibrary.org/search.json?q=${query}&page=${pageNumber}`
+          `https://openlibrary.org/search.json?q=${query}&page=${pageNumber}`,
         );
         if (res.ok) {
           const data = await res.json();
           console.log("여기", data);
           setBooks((prevBooks) => [
-            ...new Set([...prevBooks, ...data.docs.map((b) => b.title)])
+            ...new Set([...prevBooks, ...data.docs.map((b) => b.title)]),
           ]);
           setHasMore(data.docs.length > 0);
         }
@@ -57,7 +57,7 @@ export default function App() {
       });
       if (node) observer.current.observe(node);
     },
-    [loading, hasMore]
+    [loading, hasMore],
   );
 
   function handleSearch(e) {
@@ -66,7 +66,9 @@ export default function App() {
   }
 
   return (
-    <>
+    <div style={{ textAlign: "center" }}>
+      <h2>Infinite Scroll</h2>
+      <h3>Book Dictionary</h3>
       <input type="text" value={query} onChange={handleSearch}></input>
       {books.map((book, index) => {
         if (books.length === index + 1) {
@@ -81,6 +83,6 @@ export default function App() {
       })}
       <div>{loading && "Loading..."}</div>
       <div>{error && "Error"}</div>
-    </>
+    </div>
   );
 }
