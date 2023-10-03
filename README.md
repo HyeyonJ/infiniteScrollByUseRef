@@ -28,6 +28,7 @@
   - onScroll event 와 Intersection Observer API 둘 다 사용해 본 결과, 직관적으로 바로 이해 가능한 것은 onScroll event로 무한스크롤을 구현하는 것이었습니다. Intersection Observer API는 onScroll event 보다 값싼 비용으로 사용할 수 있다고 하는데, 이 부분에 대해서는 체감이 되지 않았습니다. 다만, onScroll event는 빈번한 이벤트 발생으로 성능 최적화를 위하서 throttle과 같은 처리가 필요하므로 Observer API가 유지보수 측면에서 편리하다고 생각합니다.
 
 ## 아키텍처
+[image](https://github.com/HyeyonJ/infiniteScrollByUseRef/assets/113879120/33432e28-a697-4072-a1db-8508c33e7724)
 
 ## 구현 화면
 |![image](https://github.com/HyeyonJ/infiniteScrollByUseRef/assets/113879120/2a9e92cb-0916-4f17-bcea-9a2ceecde483)|![image](https://github.com/HyeyonJ/infiniteScrollByUseRef/assets/113879120/f0cc2fbd-8c19-4f44-b2f9-8368d2e0e2fb)|![image](https://github.com/HyeyonJ/infiniteScrollByUseRef/assets/113879120/87004c16-5fe0-4a81-80b7-aae0ed7388f5)
